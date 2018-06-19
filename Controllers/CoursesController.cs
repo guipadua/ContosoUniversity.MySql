@@ -184,8 +184,10 @@ namespace ContosoUniversity.Controllers
         {
             if (multiplier != null)
             {
+                var intMultiplier = (int)multiplier;
                 ViewData["RowsAffected"] =
-                    await _context.Courses.UpdateAsync(x => new Course { Credits = x.Credits * (int)multiplier });
+                    await _context.Courses.UpdateAsync(x => new Course { Credits = intMultiplier });
+                //await _context.Courses.UpdateAsync(x => new Course { Credits = x.Credits * (int)multiplier });
             }
             return View();
         }

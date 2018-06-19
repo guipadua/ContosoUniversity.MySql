@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContosoUniversity.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20180619204351_InitialCreate")]
+    [Migration("20180619222545_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,9 +62,7 @@ namespace ContosoUniversity.Migrations
                     b.Property<string>("Name")
                         .HasMaxLength(50);
 
-                    b.Property<DateTime?>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
+                    b.Property<byte[]>("RowVersion");
 
                     b.Property<DateTime>("StartDate");
 

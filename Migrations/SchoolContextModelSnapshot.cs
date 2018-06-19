@@ -60,9 +60,7 @@ namespace ContosoUniversity.Migrations
                     b.Property<string>("Name")
                         .HasMaxLength(50);
 
-                    b.Property<DateTime?>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
+                    b.Property<byte[]>("RowVersion");
 
                     b.Property<DateTime>("StartDate");
 
