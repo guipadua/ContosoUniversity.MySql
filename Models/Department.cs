@@ -12,8 +12,7 @@ namespace ContosoUniversity.Models
         [StringLength(50, MinimumLength = 3)]
         public string Name { get; set; }
 
-        [DataType(DataType.Currency)]
-        [Column(TypeName = "money")]
+        [DataType(DataType.Currency)]        
         public decimal Budget { get; set; }
 
         [DataType(DataType.Date)]
